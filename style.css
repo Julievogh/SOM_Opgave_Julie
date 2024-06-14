@@ -49,16 +49,33 @@ button {
   padding: 0.8rem 1.4rem;
   cursor: pointer;
   margin: 1rem 0;
+  transition: all 0.5s ease;
 }
 
 .button-white {
   background-color: var(--primary);
   color: var(--secondary);
+  transition: background-color 0.5s ease;
+}
+
+.button-white:hover {
+  background-color: var(--accent);
+  color: var(--primary);
 }
 
 .button-black {
   background-color: var(--secondary);
   color: var(--primary);
+  transition: background-color 0.5s ease;
+}
+
+.button-black:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+  color: var(--secondary);
+}
+
+.button-black p:hover {
+  opacity: 0.5;
 }
 
 nav {
@@ -220,15 +237,18 @@ nav ul a:hover {
   position: relative;
   flex: 1;
   text-align: center;
+  overflow: hidden;
 }
 
 .three-imgs-container img {
   width: 100%;
   height: 300px;
   object-fit: cover;
+  transition: transform 0.5s ease;
 }
 
 .three-imgs-container h2 {
+  z-index: 1000;
   position: absolute;
   top: 40%;
   left: 50%;
@@ -238,6 +258,17 @@ nav ul a:hover {
   justify-self: center;
   font-weight: 400;
   font-size: 2rem;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.three-imgs-container div:hover img {
+  transform: scale(1.1);
+}
+
+.three-imgs-container div:hover h2 {
+  opacity: 1;
+  color: var(--accent);
 }
 
 .intouch-container {
@@ -369,7 +400,7 @@ nav ul a:hover {
 .footer-item .footer-links p a {
   text-decoration: none;
   color: var(--primary);
-  transition: color 0.3s ease;
+  transition: color 0.5s ease;
 }
 
 .footer-item .footer-links p a:hover {
