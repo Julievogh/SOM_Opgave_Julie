@@ -1,7 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
 :root {
   --background: #ffffff;
   --primary: #fff;
-  --secondary: #fff;
+  --secondary: #000000;
   --accent: #f8dd9f;
 }
 
@@ -11,27 +14,71 @@ body {
   box-sizing: border-box;
 }
 
+h1 {
+  font-family: "DM Serif Display", serif;
+  font-weight: 400;
+  font-size: 3.2rem;
+  line-height: 54px;
+}
+
+h2 {
+  font-family: "DM Serif Display", serif;
+  font-size: 3.1rem;
+}
+
+h3 {
+  font-family: "DM Serif Display", serif;
+  font-size: 2.2rem;
+  font-weight: 400;
+}
+
 p {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 300;
+  line-height: 19px;
+}
+
+button {
+  font-family: "Poppins", sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  border-radius: 10px;
+  line-height: 10px;
+  border: none;
+  padding: 0.8rem 1.4rem;
+  cursor: pointer;
+  margin: 1rem 0;
+}
+
+.button-white {
+  background-color: var(--primary);
+  color: var(--secondary);
+}
+
+.button-black {
+  background-color: var(--secondary);
+  color: var(--primary);
 }
 
 nav {
   grid-column: col2 / col5;
 }
-
 nav ul {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.8rem;
   display: flex;
-  flex-direction: row;
+  flex-wrap: nowrap;
   justify-content: space-around;
   align-items: center;
-  flex-direction: row;
   list-style-type: none;
+  color: #000000;
   gap: 1rem;
 }
 
 nav ul img {
   margin-right: 2rem;
+  max-width: 80px;
 }
 
 nav ul button {
@@ -40,11 +87,16 @@ nav ul button {
 
 nav ul a {
   text-decoration: none;
+  color: var(--secondary);
+}
+
+nav ul a:hover {
+  color: var(--accent);
 }
 
 .grid-container {
   display: grid;
-  grid-template-columns: [start] 1fr [col1] 1fr [col2] 2fr [col3] 4fr [col4] 2fr [col5] 1fr [col6] 1fr [end];
+  grid-template-columns: [start] 0.5fr [col1] 0.5fr [col2] 2fr [col3] 4fr [col4] 2fr [col5] 0.5fr [col6] 0.5fr [end];
 }
 
 .grid-item {
@@ -93,12 +145,224 @@ nav ul a {
 }
 
 .item3 img {
-  width: 50%;
+  max-width: 100%;
+  grid-column: col2 / col3;
 }
 
+.split-sektion-1 {
+  grid-column: col2 / col5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+.split-sektion-1-container {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.split-sektion-1-image,
+.split-sektion-1-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.split-sektion-1-image {
+  padding-right: 1rem;
+}
+
+.split-sektion-1-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+.split-sektion-1-text {
+  padding-left: 1rem;
+}
+
+.split-sektion-1-text button {
+  flex-shrink: 0;
+  align-self: flex-start;
+}
+
+.three-imgs-container {
+  grid-column: start / end;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.three-imgs-container div {
+  position: relative;
+  flex: 1;
+  text-align: center;
+}
+
+.three-imgs-container img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.three-imgs-container h2 {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--primary);
+  align-self: center;
+  justify-self: center;
+  font-weight: 400;
+  font-size: 2rem;
+}
+
+.intouch-container {
+  grid-column: col2 / col5;
+  display: flex;
+  position: relative;
+  z-index: 1;
+  text-align: left;
+  background-color: var(--accent);
+  color: var(--primary);
+  padding: 2rem;
+  margin-top: 2rem;
+  color: var(--secondary);
+}
+
+.intouch-container::before {
+  content: "";
+  position: absolute;
+  background-color: var(--accent);
+  width: 100vw;
+  height: 100%;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
+}
+
+.intouch-text {
+  flex: 1;
+  padding-right: 1rem;
+}
+
+.intouch-text p span {
+  font-weight: 600;
+}
+
+.intouch-form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.intouch-form form {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.intouch-form form button {
+  margin-top: 1rem;
+  align-self: flex-end;
+}
+
+.intouch-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.intouch-form input,
+.intouch-form textarea {
+  width: 100%;
+  padding: 0.4rem;
+  margin-bottom: 0.6rem;
+  border: none;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.intouch-form button {
+  padding: 0.8rem 1.4rem;
+  background-color: var(--secondary);
+  color: var(--primary);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.intouch-form label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.footer-container {
+  grid-column: start / end;
+  background: var(--secondary);
+  color: var(--primary);
+  display: flex;
+  justify-content: space-around;
+  padding: 2rem;
+}
+
+.footer-item {
+  flex: 1;
+  margin-right: 2rem;
+}
+
+.footer-item:last-child {
+  margin-right: 0;
+}
+
+.footer-item h5 {
+  font-family: "DM Serif Display", serif;
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.footer-item p {
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 0.5rem;
+}
+
+.footer-item .footer-links {
+  padding: 0;
+  margin: 0;
+}
+
+.footer-item .footer-links p {
+  margin-bottom: 0.5rem;
+}
+
+.footer-item .footer-links p a {
+  text-decoration: none;
+  color: var(--primary);
+  transition: color 0.3s ease;
+}
+
+.footer-item .footer-links p a:hover {
+  color: var(--accent);
+}
+
+.footer-item img {
+  width: 20px;
+  margin-right: 1rem;
+}
 @media (max-width: 768px) {
   nav ul {
-    font-family: Arial, Helvetica, sans-serif;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -113,5 +377,59 @@ nav ul a {
 
   nav ul button {
     margin-left: 0;
+  }
+
+  .split-sektion-1-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .split-sektion-1-image,
+  .split-sektion-1-text {
+    padding: 0;
+  }
+
+  .split-sektion-1-image {
+    margin-bottom: 1rem;
+  }
+
+  .three-imgs-container h2 {
+    font-size: 1rem;
+  }
+
+  .intouch-container {
+    flex-direction: column;
+  }
+
+  .intouch-text,
+  .intouch-form {
+    padding: 1rem 0;
+    text-align: center;
+  }
+
+  .intouch-form form button {
+    align-self: center;
+  }
+
+  .footer-container {
+    padding: 2rem 1rem;
+  }
+
+  .footer-container h5 {
+    font-size: 1rem;
+  }
+
+  .footer-container p {
+    font-size: 0.7rem;
+  }
+
+  .footer-item img {
+    width: 20px;
+    margin-right: 0.2rem;
+  }
+
+  .footer-item {
+    margin-right: 0.4rem;
+    margin-bottom: 1.5rem;
   }
 }
