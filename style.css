@@ -120,11 +120,16 @@ nav ul a:hover {
   color: var(--primary);
 }
 
+.top-text p {
+  max-width: 400px;
+}
+
 .item2 {
   grid-column: col2 / col5;
   position: relative;
   z-index: 1;
   text-align: center;
+  padding: 2rem 0;
 }
 
 .item2::before {
@@ -137,6 +142,15 @@ nav ul a:hover {
   left: 50%;
   transform: translateX(-50%);
   z-index: -1;
+}
+
+.item2 p {
+  font-size: 0.9rem;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+
+  word-wrap: break-word;
 }
 
 .item3 {
@@ -185,6 +199,10 @@ nav ul a:hover {
   padding-left: 1rem;
 }
 
+.split-sektion-1-text p {
+  max-width: 400px;
+}
+
 .split-sektion-1-text button {
   flex-shrink: 0;
   align-self: flex-start;
@@ -195,6 +213,7 @@ nav ul a:hover {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  padding: 2rem 0;
 }
 
 .three-imgs-container div {
@@ -229,7 +248,7 @@ nav ul a:hover {
   text-align: left;
   background-color: var(--accent);
   color: var(--primary);
-  padding: 2rem;
+  padding: 2rem 0 4rem 0;
   margin-top: 2rem;
   color: var(--secondary);
 }
@@ -249,6 +268,7 @@ nav ul a:hover {
 .intouch-text {
   flex: 1;
   padding-right: 1rem;
+  justify-content: flex-start;
 }
 
 .intouch-text p span {
@@ -259,7 +279,6 @@ nav ul a:hover {
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
 }
 
 .intouch-form form {
